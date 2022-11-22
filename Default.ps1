@@ -52,18 +52,18 @@ if((read-host "ar reikia office2021? jei ne spausk n ir enter") -like "n")
 }else{
     Write-Host "irasom"
 
-    $02021xml = "https://raw.githubusercontent.com/Upsetas/autounattendscripts/main/2021office.xml"
-    $02021xmllocal = "~\desktop\2021office.xml"
+    $o2021xml = "https://raw.githubusercontent.com/Upsetas/autounattendscripts/main/2021office.xml"
+    $o2021xmllocal = "~\desktop\2021office.xml"
 
 
-    Invoke-WebRequest -Uri $02021xml -OutFile $02021xmllocal
+    Invoke-WebRequest -Uri $o2021xml -OutFile $o2021xmllocal
     sleep -s 1    
 
-    $office2021Setupexe = "https://github.com/Upsetas/autounattendscripts/blob/main/setup.exe"
-    $office2021Setupexelocal = "~\desktop\setup.exe"
+    $office2021Setupexe = "https://raw.githubusercontent.com/Upsetas/autounattendscripts/main/setup.exe"
+    $office2021Setupexelocal = "C:\Users\Administrator\desktop\setup.exe"
 
 
-    Invoke-WebRequest -Uri $office2021Setupexe -OutFile $office2021exelocal
+    Invoke-WebRequest -Uri $office2021Setupexe -OutFile $office2021Setupexelocal
     sleep -s 2
     Start-Process -FilePath "$office2021Setupexelocal" -Verb RunAs -ArgumentList "/configure C:\Users\Administrator\desktop\2021office.xml"
   
