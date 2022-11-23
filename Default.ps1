@@ -29,6 +29,10 @@ reg unload HKU\default
 #Enables num lock for system
 REG ADD "HKU\.DEFAULT\Control Panel\Keyboard" /v InitialKeyboardIndicators /t REG_SZ /d 2 /f
 
+#Turn Off Mouse Accelaration "Enhance pointer Precision", If went to settings it turns on again because of windows
+
+Set-Itemproperty -path 'HKCU:\Control Panel\Mouse' -Name 'MouseThreshold1' -value '0'; Set-Itemproperty -path 'HKCU:\Control Panel\Mouse' -Name 'MouseThreshold2' -value '0'; Set-Itemproperty -path 'HKCU:\Control Panel\Mouse' -Name 'MouseSpeed' -value '0' -force
+
 #Starts Update Scan
 C:\Windows\system32\usoclient.exe StartInteractiveScan
 
