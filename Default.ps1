@@ -15,6 +15,8 @@ reg load HKU\default C:\Users\Default\NTUSER.DAT
 
 REG ADD HKU\Default\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds /v ShellFeedsTaskbarViewMode /t REG_DWORD /d 2 /f
 
+REG ADD HKEY_CURRENT_USER\Software\Microsoft\GameBar\ /v AutoGameModeEnabled /t REG_DWORD /d 0 /f
+
 REG ADD HKU\Default\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Start_SearchFiles /t REG_DWORD /d 2 /f
 
 REG ADD HKU\Default\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ShowCortanaButton /t REG_DWORD /d 0 /f
@@ -33,6 +35,8 @@ REG ADD "HKU\.DEFAULT\Control Panel\Keyboard" /v InitialKeyboardIndicators /t RE
 Set-Itemproperty -path 'HKCU:\Control Panel\Mouse' -Name 'MouseThreshold1' -value '0' -force
 Set-Itemproperty -path 'HKCU:\Control Panel\Mouse' -Name 'MouseThreshold2' -value '0' -force
 Set-Itemproperty -path 'HKCU:\Control Panel\Mouse' -Name 'MouseSpeed' -value '0' -force
+
+
 
 #Starts Update Scan
 C:\Windows\system32\usoclient.exe StartInteractiveScan
